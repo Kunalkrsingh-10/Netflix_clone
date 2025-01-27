@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.views import View
 
-def Home(request):
-    return render(request, 'netflixapp/index.html') 
-def login(request):
-    return render(request, 'accounts/login.html')
+class Home(View):
+    def get(self, request, *args, **kwargs):
+        return render(request, 'index.html') 
+    
+   
